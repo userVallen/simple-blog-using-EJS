@@ -1,0 +1,154 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  background-color: #faf7f0;
+  color: #4a4947;
+  font-family: "Google Sans Code", monospace;
+}
+
+a {
+  color: #4a4947;
+  text-decoration: none;
+  min-width: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  margin: 0;
+}
+
+.blog-page {
+  width: 100%;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.add-blog {
+  display: flex;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #d8d2c2;
+  aspect-ratio: 1 / 1;
+  padding: 0.6em;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-blog:hover {
+  background-color: #4a4947;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-blog:hover * {
+  color: #d8d2c2;
+}
+
+.add-blog button {
+  background-color: transparent;
+  border: none;
+  padding: none;
+  aspect-ratio: 1 / 1;
+}
+
+.add-blog i {
+  color: #4a4947;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-form {
+  min-width: 75%;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(20%, 1fr));
+  grid-auto-rows: 5em;
+  justify-content: space-between;
+  gap: 1em;
+  width: 85%;
+  min-height: 40vh;
+  border-top: solid #4a4947;
+  border-bottom: solid #4a4947;
+  padding: 1em 0.5em;
+  max-width: 85%;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card {
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border-radius: 8px;
+  align-items: center;
+  border: solid #4a4947;
+  height: fit-content;
+  max-width: 100%;
+}
+
+.blog-card .btn {
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-title {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.options-button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 0;
+}
+
+.form-control:focus {
+  border-color: black;
+  box-shadow: 0 0 0 0.15rem black;
+}
+
+.google-sans-code {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@media (max-width: 576px) {
+  .blog-container {
+    display: flex;
+    flex-direction: column;
+    border-top: solid 0.1em #4a4947;
+    border-bottom: solid 0.1em #4a4947;
+  }
+
+  .blog-card {
+    border: solid 0.1em #4a4947;
+  }
+}
