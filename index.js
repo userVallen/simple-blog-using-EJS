@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import { v4 as uuidv4 } from "uuid";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,7 +63,6 @@ app.post("/blogs/:id/delete", (req, res) => {
   res.redirect("/");
 });
 
-// THIS should only check if the blog exists
 app.post("/blogs/:id/edit", (req, res) => {
   let blogIndex = blogs.findIndex((item) => item.id === req.params.id);
   let blog = blogs[blogIndex];
@@ -75,7 +74,6 @@ app.post("/blogs/:id/edit", (req, res) => {
   });
 });
 
-// How to pass the id? Then change the blog from here!
 app.post("/blogs/:id/update", (req, res) => {
   let blogIndex = blogs.findIndex((item) => item.id === req.params.id);
   if (blogIndex !== -1) {
